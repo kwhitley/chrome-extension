@@ -1,0 +1,29 @@
+{
+  "name": "sveltekit-extension",
+  "version": "0.0.1",
+  "scripts": {
+    "dev:extension": "nodemon --watch src --watch static --ext .* --exec \"npm run build & npx esbuild src/content_scripts/main.ts --bundle --outdir=build/content_scripts/\"",
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "package": "svelte-kit package",
+    "preview": "svelte-kit preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "next",
+    "@sveltejs/kit": "next",
+    "nodemon": "^2.0.15",
+    "svelte": "^3.44.0",
+    "svelte-check": "^2.2.6",
+    "svelte-preprocess": "^4.9.4",
+    "sveltekit-adapter-chrome-extension": "^1.0.1-next.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.3"
+  },
+  "type": "module",
+  "dependencies": {
+    "@types/chrome": "^0.0.177",
+    "esbuild": "^0.14.18"
+  }
+}
