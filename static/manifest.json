@@ -10,14 +10,18 @@
       ],
       "exclude_matches": [
         "*://*/*.xml",
-        "chrome://*/*"
+        "*://extensions/*"
       ],
       "js": ["extension/inject.js"],
       "run_at": "document_start"
     }
   ],
   "background": {
-    "service_worker": "extension/background.js"
+    "service_worker": "extension/background.js",
+    "exclude_matches": [
+      "*://*/*.xml",
+      "*://extensions/*"
+    ]
   },
   "icons": {
     "16": "re.logo.16x16.png",
