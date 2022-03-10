@@ -1,0 +1,30 @@
+{
+  "name": "SvelteKit Extension",
+  "description": "A browser extension made with Svelte Kit",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "options_page": "options.html",
+  "action": {
+    "default_title": "Svelte Extension",
+    "default_icon": "favicon.png",
+    "default_popup": "index.html"
+  },
+  "content_scripts": {
+    "matches": ["*://*/*" ],
+    "css": [],
+    "js": ["scripts/background.js"]
+  },
+  "icons": {
+    "48": "favicon.png"
+  }
+}
